@@ -1,0 +1,317 @@
+@media (min-width: 761px) {
+  .login-mobile-brand { display: none; }
+  body:has(.login-page) { overflow: hidden; }
+
+  .login-page {
+    height: 100dvh;
+    min-height: 0;
+  }
+
+  .login-hero,
+  .login-panel {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .login-hero {
+    padding-top: clamp(28px, 4.5vh, 48px);
+  }
+
+  .login-brand {
+    gap: 16px;
+    font-size: clamp(31px, 3vw, 47px);
+  }
+
+  .login-brand img {
+    width: clamp(64px, 5.4vw, 84px);
+    height: clamp(64px, 5.4vw, 84px);
+  }
+
+  .login-message {
+    margin-top: clamp(25px, 3.4vh, 38px);
+  }
+
+  .login-message h1 {
+    font-size: clamp(31px, 2.75vw, 46px);
+  }
+
+  .login-message p {
+    margin-top: 13px;
+    font-size: clamp(16px, 1.4vw, 23px);
+  }
+
+  .login-illustration {
+    width: min(750px, 110%);
+    max-height: 46vh;
+    margin: clamp(22px, 3vh, 36px) auto 0;
+    transform: none;
+  }
+
+  .login-panel {
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+  }
+
+  .login-card {
+    width: min(700px, 100%);
+    min-height: 0;
+    max-height: 95vh;
+    padding: clamp(28px, 3.8vh, 42px) clamp(36px, 3.5vw, 54px) 25px;
+    border-radius: 30px;
+  }
+
+  .login-card-heading h2 {
+    margin-bottom: 7px;
+    font-size: clamp(30px, 2.35vw, 40px);
+  }
+
+  .login-card-heading p {
+    font-size: clamp(17px, 1.3vw, 22px);
+  }
+
+  .login-card form {
+    margin-top: clamp(25px, 3.5vh, 36px);
+  }
+
+  .login-card form > label {
+    margin-bottom: 8px;
+    font-size: clamp(16px, 1.2vw, 20px);
+  }
+
+  .login-input-wrap {
+    height: clamp(53px, 6.2vh, 62px);
+    margin-bottom: clamp(20px, 2.6vh, 27px);
+    padding: 0 18px;
+    border-radius: 17px;
+  }
+
+  .login-input-wrap > svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .login-input-wrap input {
+    padding: 0 14px;
+    font-size: clamp(16px, 1.2vw, 20px);
+  }
+
+  .password-toggle svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .remember-option {
+    gap: 12px;
+    font-size: clamp(15px, 1.1vw, 18px);
+  }
+
+  .remember-option span {
+    width: 27px;
+    height: 27px;
+  }
+
+  .forgot-password {
+    font-size: clamp(14px, 1.05vw, 18px);
+  }
+
+  .login-submit {
+    height: clamp(55px, 6.5vh, 64px);
+    margin-top: clamp(27px, 3.4vh, 36px);
+    border-radius: 20px;
+    font-size: clamp(18px, 1.35vw, 22px);
+  }
+
+  .login-register {
+    margin-top: clamp(18px, 2.4vh, 25px);
+    padding-top: clamp(16px, 2vh, 21px);
+    font-size: clamp(15px, 1.05vw, 18px);
+  }
+}
+
+@media (max-width: 760px) {
+  body:has(.login-page) {
+    overflow-x: hidden;
+    background: #f7f0e5;
+  }
+
+  .login-page {
+    display: block;
+    min-height: 100svh;
+    padding: max(18px, env(safe-area-inset-top)) 16px max(18px, env(safe-area-inset-bottom));
+    background:
+      radial-gradient(circle at 50% 8%, rgba(213, 156, 55, .18), transparent 35%),
+      linear-gradient(160deg, #fffaf1 0%, #f5ecde 100%);
+  }
+
+  .login-hero { display: none; }
+
+  .login-panel {
+    display: grid;
+    place-items: center;
+    min-height: calc(100svh - 36px);
+    padding: 0;
+  }
+
+  .login-card {
+    width: min(100%, 430px);
+    min-height: 0;
+    padding: 27px 22px 24px;
+    border: 1px solid rgba(224, 210, 189, .9);
+    border-radius: 28px;
+    background: rgba(255, 254, 251, .94);
+    box-shadow: 0 18px 45px rgba(94, 68, 30, .13);
+    backdrop-filter: blur(12px);
+  }
+
+  .login-mobile-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -.6px;
+  }
+
+  .login-mobile-brand img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  .login-card-heading h2 {
+    margin-bottom: 8px;
+    font-size: 29px;
+    letter-spacing: -.8px;
+  }
+
+  .login-card-heading p {
+    max-width: 310px;
+    margin-inline: auto;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .login-card form { margin-top: 30px; }
+
+  .login-card form > label {
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .login-input-wrap {
+    height: 56px;
+    margin-bottom: 22px;
+    padding: 0 15px;
+    border-width: 1.5px;
+    border-radius: 16px;
+    background: #fff;
+  }
+
+  .login-input-wrap > svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .login-input-wrap input {
+    padding: 0 11px;
+    font-size: 16px;
+  }
+
+  .password-toggle {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .password-toggle svg { width: 22px; height: 22px; }
+
+  .login-options {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .remember-option {
+    gap: 9px;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
+  .remember-option span {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+  }
+
+  .forgot-password {
+    max-width: 155px;
+    font-size: 13px;
+    line-height: 1.25;
+    text-align: right;
+  }
+
+  .login-submit {
+    height: 56px;
+    margin-top: 30px;
+    border-radius: 17px;
+    font-size: 18px;
+  }
+
+  .login-register {
+    margin-top: 23px;
+    padding-top: 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 370px) {
+  .login-page { padding-inline: 10px; }
+  .login-card { padding-inline: 17px; border-radius: 23px; }
+  .login-card-heading h2 { font-size: 26px; }
+  .login-options { align-items: flex-start; }
+  .forgot-password { max-width: 130px; }
+}
+
+/* Tablet and small-laptop landscape: keep the left story visually dominant. */
+@media (min-width: 761px) and (max-width: 1400px) and (min-height: 721px) {
+  .login-hero {
+    padding-left: clamp(28px, 3.5vw, 52px);
+    padding-right: clamp(28px, 3.5vw, 52px);
+  }
+
+  .login-brand {
+    margin-left: clamp(10px, 2vw, 28px);
+  }
+
+  .login-message {
+    margin-top: clamp(35px, 4.6vh, 48px);
+  }
+
+  .login-message h1 {
+    font-size: clamp(42px, 4vw, 54px);
+    line-height: 1.08;
+  }
+
+  .login-message p {
+    margin-top: 17px;
+    font-size: clamp(19px, 1.7vw, 24px);
+  }
+
+  .login-illustration {
+    width: min(870px, 140%);
+    max-width: none;
+    max-height: 54vh;
+    margin-left: -20%;
+    margin-right: -20%;
+  }
+}
+
+@media (min-width: 761px) and (max-height: 720px) {
+  .login-card-heading p br { display: none; }
+  .login-card { padding-top: 22px; padding-bottom: 18px; }
+  .login-card form { margin-top: 20px; }
+  .login-input-wrap { height: 49px; margin-bottom: 16px; }
+  .login-submit { height: 50px; margin-top: 20px; }
+  .login-register { margin-top: 14px; padding-top: 13px; }
+}
