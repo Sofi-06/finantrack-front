@@ -1,6 +1,12 @@
+/* Shared auth template: keep layouts centered instead of stretching on giant screens. */
+.login-page {
+  max-width: var(--app-template-max-width);
+  margin-inline: auto;
+}
+
 @media (min-width: 761px) {
   .login-mobile-brand { display: none; }
-  body:has(.login-page) { overflow: hidden; }
+  body:has(.login-page) { overflow: hidden; background: #fbf8f2; }
 
   .login-page {
     height: 100dvh;
@@ -125,6 +131,13 @@
     margin-top: clamp(18px, 2.4vh, 25px);
     padding-top: clamp(16px, 2vh, 21px);
     font-size: clamp(15px, 1.05vw, 18px);
+  }
+}
+
+@media (min-width: 761px) and (min-height: 1200px) {
+  .login-panel {
+    align-items: start;
+    padding-top: clamp(70px, 6vh, 150px);
   }
 }
 
