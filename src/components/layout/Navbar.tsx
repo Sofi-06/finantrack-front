@@ -1,5 +1,45 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function Navbar() {
-  return <header><div><h1>Dashboard</h1><p>Tu resumen financiero del mes</p></div><div className="header-actions"><div className="month"><ChevronLeft size={20} /><span>Agosto 2026</span><ChevronRight size={20} /></div><div className="avatar">MC</div></div></header>;
+type NavbarProps = {
+  title: string;
+  subtitle?: string;
+  month?: string;
+  initials?: string;
+  onPreviousMonth?: () => void;
+  onNextMonth?: () => void;
+};
+
+export default function Navbar({
+  title,
+  subtitle,
+  month,
+  initials = 'MC',
+  onPreviousMonth,
+  onNextMonth,
+}: NavbarProps) {
+  return (
+    <header className="topbar">
+      <div className="topbar-copy">
+        <h1>{title}</h1>
+        {subtitle && <p>{subtitle}</p>}
+      </div>
+
+      <div className="header-actions">
+        {month && (
+          <div className="month-picker" aria-label={`Periodo actual: ${month}`}>
+            <button type="button" onClick={onPreviousMonth} aria-label="Mes anterior">
+              <ChevronLeft size={20} />
+            </button>
+            <span>{month}</span>
+            <button type="button" onClick={onNextMonth} aria-label="Mes siguiente">
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        )}
+        <button type="button" className="avatar" aria-label="Abrir perfil">
+          {initials}
+        </button>
+      </div>
+    </header>
+  );
 }

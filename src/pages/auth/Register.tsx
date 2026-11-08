@@ -55,11 +55,13 @@ export default function Register() {
       sessionStorage.removeItem('user');
       navigate('/dashboard', { replace: true });
     } catch (requestError) {
-      setError(
-        axios.isAxiosError(requestError) && requestError.response?.status === 409
-          ? 'Este correo ya está registrado.'
-          : 'No pudimos crear tu cuenta. Verifica los datos e inténtalo de nuevo.',
-      );
+      if (axios.isAxiosError(requestError) && requestError.response?.status === 409) {
+        setError('Este correo ya está registrado. Intenta iniciar sesión.');
+      } else if (axios.isAxiosError(requestError) && !requestError.response) {
+        setError('No pudimos conectar con el servidor. Verifica que el backend esté activo.');
+      } else {
+        setError('No pudimos crear tu cuenta. Verifica los datos e inténtalo de nuevo.');
+      }
     } finally {
       setIsSubmitting(false);
     }

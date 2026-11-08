@@ -1,1 +1,36 @@
-.lower-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;margin-top:22px}.list-card{background:#fffdf9;border:1px solid #eee6da;border-radius:34px;padding:27px 31px 20px;min-height:382px}.list-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:27px}.list-heading h2{font-size:18px;margin:0}.list-heading button{border:0;background:none;font:500 16px inherit;color:#292725;cursor:pointer}.movement-row{height:97px;border-bottom:1px solid #eee6da;display:flex;align-items:center;gap:19px}.movement-row:last-child{border-bottom:0}.movement-icon,.account-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;flex:none}.movement-icon.income{background:#d8f0df;color:#42965f}.movement-icon.expense{background:#f5dcd8;color:#c95a4b}.movement-icon.transfer{background:#f1e8d7;color:#827b70}.movement-info{display:flex;flex-direction:column;gap:5px;min-width:0}.movement-info strong{font-size:17px;font-weight:500}.movement-info small{font-size:15px;color:#82786c}.movement-row>b{margin-left:auto;font-size:18px;white-space:nowrap}.movement-row>b.income{color:#42965f}.movement-row>b.expense{color:#c95a4b}.account-row{height:77px;display:flex;align-items:center;gap:19px}.account-icon{width:58px;height:58px;background:#f1e8d7;color:#827b70}.account-row strong{font-size:18px;font-weight:500}.account-row b{margin-left:auto;font-size:18px}@media(max-width:1250px){.lower-grid{grid-template-columns:1fr}.list-card{min-height:0}.movement-row{height:84px}}
+.lower-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; margin-top: 18px; }
+.list-card { min-height: 350px; padding: 24px 26px 18px; border: 1px solid var(--line); border-radius: 32px; background: var(--surface); }
+.list-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 17px; }
+.list-heading h2 { margin: 0; font-size: 16px; }
+.list-heading button { padding: 6px 0; border: 0; color: #292725; background: none; font-size: 14px; font-weight: 500; cursor: pointer; }
+.list-heading button:hover { color: var(--gold); }
+.movement-row { min-height: 76px; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid var(--line); }
+.movement-row:last-child { border-bottom: 0; }
+.movement-icon, .account-icon { width: 46px; height: 46px; display: grid; place-items: center; flex: none; border-radius: 50%; }
+.movement-icon.income { color: var(--green); background: var(--green-soft); }
+.movement-icon.expense { color: var(--red); background: var(--red-soft); }
+.movement-icon.transfer { color: #827b70; background: #f1e8d7; }
+.movement-info { min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.movement-info strong { overflow: hidden; font-size: 15px; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; }
+.movement-info small { overflow: hidden; color: var(--muted); font-size: 13.5px; text-overflow: ellipsis; white-space: nowrap; }
+.movement-row > b { margin-left: auto; font-size: 16px; white-space: nowrap; }
+.movement-row > b.income { color: var(--green); }
+.movement-row > b.expense { color: var(--red); }
+.account-row { min-height: 68px; display: flex; align-items: center; gap: 15px; }
+.account-icon { background: #f1e8d7; color: #827b70; }
+.account-row strong { font-size: 16px; font-weight: 500; }
+.account-row b { margin-left: auto; font-size: 16px; white-space: nowrap; }
+
+@media (max-width: 1350px) {
+  .lower-grid { grid-template-columns: 1fr; }
+  .list-card { min-height: 0; }
+}
+
+@media (max-width: 620px) {
+  .list-card { padding: 24px 20px; }
+  .movement-row { min-height: 78px; gap: 12px; }
+  .movement-icon, .account-icon { width: 44px; height: 44px; }
+  .movement-info small { max-width: 180px; }
+  .movement-row > b, .account-row b { font-size: 15px; }
+  .account-row strong { font-size: 16px; }
+}

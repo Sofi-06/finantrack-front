@@ -36,11 +36,13 @@ export default function Login() {
       storage.setItem('user', JSON.stringify(data.user));
       navigate('/dashboard', { replace: true });
     } catch (requestError) {
-      setError(
-        axios.isAxiosError(requestError) && requestError.response?.status === 401
-          ? 'El correo o la contraseña no son correctos.'
-          : 'No pudimos iniciar sesión. Verifica la conexión e inténtalo de nuevo.',
-      );
+      if (axios.isAxiosError(requestError) && requestError.response?.status === 401) {
+        setError('El correo o la contraseña no son correctos.');
+      } else if (axios.isAxiosError(requestError) && !requestError.response) {
+        setError('No pudimos conectar con el servidor. Verifica que el backend esté activo.');
+      } else {
+        setError('No pudimos iniciar sesión. Inténtalo de nuevo.');
+      }
     } finally {
       setIsSubmitting(false);
     }
